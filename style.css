@@ -1,0 +1,17 @@
+/*
+ * Theme Name: Regal Voyages
+ * Description: Word Press Theme for Regal Voyages Travel Agency
+ * Author: Kiran Nambiar
+ * Version: 0.1
+ * 
+ */
+
+html {
+	font-size:12px;
+}
+
+@media (max-width:800px) {
+	html {
+		font-size:12px;
+	}
+}
