@@ -1,16 +1,31 @@
-<?php get_header(); ?>
+<?php
+	get_header();
+	//$args = array( 'category_name' => 'romantic' );
+	//filtering on known categories
+	$myfilter = 'category_name=romantic';
+	$query = get_posts( $myfilter );
+?>
 
 <div id="main">
 	<div id="content clearfix">
 		<p>this is using front-page.php</p>
-		<?php if ( have_posts() ) : while ( have_posts() ) :the_post(); ?>
+		<?php //echo var_dump($query) ?>
+		<?php 
+		if ( have_posts( $myfilter ) ) {
+			foreach ( $query as $post) : 
+				setup_postdata($post); ?>
+			<h3><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></h3>
+
+			<!--<p> <?php the_content(); ?> </p>-->
 			
-		<?php endwhile; 
-			else: ?>
-			<p>
-				<?php _e( 'Sorry, there is not content to show at this time.')?>
-			</p>
-		<?php endif; ?>
+		<?php endforeach;
+		wp_reset_postdata();
+		}
+		else { ?>
+		<p>
+			<?php _e( 'Sorry, there is not content to show at this time.')?>
+		</p>
+		<?php } ?>
 	</div>
 </div>
 
