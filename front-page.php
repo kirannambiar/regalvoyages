@@ -1,19 +1,23 @@
 <?php
 	get_header();
-	//$args = array( 'category_name' => 'romantic' );
+	$args = array( 'category_name' => 'romantic,adventure', 'tag' => 'destination' );
 	//filtering on known categories
-	$myfilter = 'category_name=romantic';
-	$query = get_posts( $myfilter );
+	//$myfilter = 'category_name=romantic+adventure';
+	$myfilter = 'tag=destination';
+	$query = get_posts( $args );
 ?>
 
 <div id="main">
 	<div id="content clearfix">
 		<p>this is using front-page.php</p>
-		<?php //echo var_dump($query) ?>
+		<?php echo var_dump($query) ?>
 		<?php 
 		if ( have_posts( $myfilter ) ) {
 			foreach ( $query as $post) : 
-				setup_postdata($post); ?>
+				setup_postdata($post);
+				$t = wp_get_post_tags($post->ID, array( 'fields' => 'names' ));
+				echo "<p>tag for this post is + " + print_r($t) + "</p>";
+				?>
 			<h3><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></h3>
 
 			<!--<p> <?php the_content(); ?> </p>-->
