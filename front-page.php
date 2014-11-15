@@ -22,7 +22,7 @@
                 <h2><? echo $category->name ?></h2>
                 <?php
 				    foreach ( $posts as  $post ) :
-                        echo "<p>inside post foreach</p>";
+                        //echo "<p>inside post foreach</p>";
                         //echo var_dump($post);
                         //setup_postdata($post);
                         //$t = wp_get_post_tags($post->ID, array( 'fields' => 'names' ));
