@@ -11,6 +11,22 @@
     $( document).ready(function() {
         var herodiv = document.getElementById('herospace');
         herodiv.style.backgroundImage="url('<?php echo get_hero_image_url(); ?>')";
+
+        $("div.featured-image").each(function(){
+            // Uncomment the following if you need to make this dynamic
+            var refH = $(this).height();
+            var refW = $(this).width();
+            var refRatio = refW/refH;
+
+            var imgH = $(this).children("img").height();
+            var imgW = $(this).children("img").width();
+
+            if ( (imgW/imgH) < refRatio ) {
+                $(this).addClass("portrait");
+            } else {
+                $(this).addClass("landscape");
+            }
+        });
     });
 </script>
 
@@ -21,31 +37,28 @@
 
 <div class="main">
 	<div class="content clearfix">
-		<p>this is using front-page.php</p>
-		<?php //echo var_dump($destCategories) ?>
-		<?php 
+		<?php
 		if ( have_posts( $myfilter ) ) {
 			foreach ( $destCategories as $category ) :
-                //echo "<p>inside category foreach</p>";
-                //echo var_dump($category);
                 $posts = get_posts( array('category_name' => $category->slug) );
-                //echo var_dump($posts);
                 ?>
                 <div class="category clearfix">
                     <h1 class="category"><? echo $category->name ?></h1>
                     <div class="featured-image">
-                        <img src="<?php echo get_featured_image_url($category); ?>">
+                        <img class="featured-image" src="<?php echo get_featured_image_url($category); ?>">
                     </div>
-                    <?php
-                        foreach ( $posts as  $post ) :
-                    ?>
-                    <h3><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></h3>
+                    <div class="category-titles">
+                        <?php
+                            foreach ( $posts as  $post ) :
+                        ?>
+                        <h3 class="category-titles"><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></h3>
 
-                    <?php
-                        endforeach;
-                        wp_reset_postdata();
-                        //the_content();
-                    ?>
+                        <?php
+                            endforeach;
+                            wp_reset_postdata();
+                            //the_content();
+                        ?>
+                    </div>
                 </div>
                 <?php
             endforeach;

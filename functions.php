@@ -35,7 +35,7 @@
     function get_featured_image_url( $category ) {
         $post = get_featured_post( $category );
         if ( has_post_thumbnail($post->ID) ) {
-            $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium');
+            $url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
             return $url[0];
         }
         else {
