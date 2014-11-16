@@ -77,6 +77,7 @@ h3.category-titles {
     padding-bottom:3rem;
     border-bottom: solid;
     vertical-align:middle;
+    font-size: 1.5rem;
 }
 
 h3.category-titles:last-child {
