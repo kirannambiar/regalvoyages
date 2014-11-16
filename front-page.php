@@ -7,8 +7,20 @@
 
 ?>
 
-<div id="main">
-	<div id="content clearfix">
+<script type="text/javascript">
+    $( document).ready(function() {
+        var herodiv = document.getElementById('herospace');
+        herodiv.style.backgroundImage="url('<?php echo get_hero_image_url(); ?>')";
+    });
+</script>
+
+<div id="herospace">
+
+</div>
+
+
+<div class="main">
+	<div class="content clearfix">
 		<p>this is using front-page.php</p>
 		<?php //echo var_dump($destCategories) ?>
 		<?php 
@@ -19,23 +31,24 @@
                 $posts = get_posts( array('category_name' => $category->slug) );
                 //echo var_dump($posts);
                 ?>
-                <h2><? echo $category->name ?></h2>
-                <?php
-				    foreach ( $posts as  $post ) :
-                        //echo "<p>inside post foreach</p>";
-                        //echo var_dump($post);
-                        //setup_postdata($post);
-                        //$t = wp_get_post_tags($post->ID, array( 'fields' => 'names' ));
-				        //echo "<p>tag for this post is + " + print_r($t) + "</p>";
-                ?>
-                <h3><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></h3>
+                <div class="category clearfix">
+                    <h1 class="category"><? echo $category->name ?></h1>
+                    <div class="featured-image">
+                        <img src="<?php echo get_featured_image_url($category); ?>">
+                    </div>
+                    <?php
+                        foreach ( $posts as  $post ) :
+                    ?>
+                    <h3><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></h3>
 
-			    <?php
-                    endforeach;
-                    wp_reset_postdata();
-			        //the_content();
+                    <?php
+                        endforeach;
+                        wp_reset_postdata();
+                        //the_content();
+                    ?>
+                </div>
+                <?php
             endforeach;
-		//wp_reset_postdata();
 		}
 		else { ?>
 		<p>
