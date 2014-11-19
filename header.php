@@ -21,4 +21,7 @@
 		
 	</head>
 	<body>
-		<?php wp_nav_menu( array('menu' => 'Main Nav') ); ?>
+        <div class="top-bar clearfix">
+            <div class="logo"><p>Regal Voyages</p></div>
+            <?php wp_nav_menu( array('menu' => 'Main Nav') ); ?>
+        </div>

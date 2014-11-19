@@ -15,33 +15,27 @@ body {
     font-family: "Fira Sans", sans-serif;
 }
 
+#mobile-device {
+    display: none;
+}
+
+#tablet-device {
+    display: none;
+}
+
 #herospace {
     width:100%;
-    max-width: 1024px;
+    max-width: 2000px;
     min-width: 100%;
-    min-height: 40rem;
+    min-height: 45rem;
     background-repeat: no-repeat;
     background-size:fill;
     background-position: center top;
+    background-attachment: fixed;
 }
 
 div.content {
     padding-top:10rem;
-}
-
-div.category {
-    padding-top: 5rem;
-}
-
-div.category-content {
-    height:25rem;
-}
-
-div.featured-image {
-    float:left;
-    width:70%;
-    height: inherit;
-    overflow:hidden;
 }
 
 img.featured-image {
@@ -59,18 +53,50 @@ img.featured-image {
 
 div.main {
     width: 75%;
-    max-width:1024px;
+    max-width:2000px;
     margin-right: auto;
     margin-left: auto;
 }
 
 div.footer {
     width:75%;
-    max-width: 1024px;
+    max-width: 2000px;
     margin-left:auto;
     margin-right:auto;
     padding-top:3rem;
     height:30rem;
+}
+
+div.top-bar {
+    width:75%;
+    margin-left: auto;
+    margin-right:auto;
+    height:10rem;
+    position: relative;
+}
+
+div.logo {
+    height:inherit;
+    font-size: 3rem;
+    width:40%;
+    position: absolute;
+    left:0;
+    top:30%;
+}
+
+div.category {
+    padding-top: 5rem;
+}
+
+div.category-content {
+    height:25rem;
+}
+
+div.featured-image {
+    float:left;
+    width:70%;
+    height: inherit;
+    overflow:hidden;
 }
 
 h1.category {
@@ -84,6 +110,7 @@ ul.category-title-list {
     font-size: 1.5rem;
     list-style: none;
     display:table-cell;
+    padding-left: 0;
 }
 
 .category-title-list li {
@@ -101,7 +128,7 @@ ul.category-title-list {
 }
 
 div.category-titles {
-    padding-left:2rem;
+    padding-left: 1.5rem;
     float:left;
     height: inherit;
     width:30%;
@@ -111,15 +138,15 @@ div.category-titles {
 /*  Menu bar css styling  */
 .menu-main-nav-container {
     padding: 0;
-    margin-left: auto;
-    margin-right:auto;
     border: 0;
-    width: 75%;
-    max-width: 1024px;
-    height:10rem;
+    width: 60%;
+    max-width: 2000px;
+    height:inherit;
     background: #ffffff;
     font-size: 12px;
     display:table;
+    position: absolute;
+    right:0;
 }
 
 
@@ -247,16 +274,54 @@ div.category-titles {
     right: 99.5%;
 }
 
+
 /* css for mobile devices */
-@media (max-width:800px) {
-    html {
-        font-size:12px;
+@media (max-width:1000px) {
+
+    #tablet-device {
+        display: block;
     }
+}
+
+
+    /* css for mobile devices */
+@media (max-width:1000px) {
+
+    div.top-bar {
+        width:100%;
+    }
+
+    div.main {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    div.footer {
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        padding-top:3rem;
+        height:20rem;
+    }
+
+    .menu-main-nav-container {
+        /*width: 100%;*/
+    }
+
+    #herospace {
+        height:30rem;
+    }
+
+    div.content {
+        padding-top: 0;
+    }
+
 
     div.featured-image {
         float:none;
         width:100%;
-        height: 30rem;
+        height: 20rem;
         overflow:hidden;
     }
 
@@ -265,4 +330,47 @@ div.category-titles {
         float:none;
         height: 30rem;
     }
+
+
+    div.category {
+        padding-top: 5rem;
+    }
+
+    div.category-content {
+        height: auto;
+    }
+
+    ul.category-title-list {
+        /*margin: 0 0 0 0;
+        vertical-align:middle;
+        font-size: 1.5rem;
+        list-style: none;
+        display:table-cell;
+        padding-left: 0;*/
+    }
+
+    .category-title-list li {
+
+        width:100%;
+    }
+
+    .category-title-list li:first-child {
+        /*border-top: solid;
+        border-width:2px;
+        border-color: #D8D8D8;*/
+    }
+
+    div.category-titles {
+        padding-left: 0;
+        float:none;
+        height: inherit;
+        width:100%;
+        display:table;
+    }
+
+    #mobile-device {
+        display: block;
+    }
+
+
 }

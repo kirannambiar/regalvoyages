@@ -30,14 +30,17 @@
         $("ul.category-title-list").each(function(){
             var numList = $(this).children().length;
             var liHeight = $(this).height();
-            $(this).children("li").css('line-height',liHeight/numList+'px');
+            var isMobile = $('#mobile-device').is(':visible') || $('#tablet-device').is(':visible');
+            if ( !isMobile ) {
+                $(this).children("li").css('line-height', liHeight / numList + 'px');
+            }
             //alert(numList);
         });
     });
 </script>
 
 <div id="herospace" class="clearfix">
-
+    <img src="">
 </div>
 
 
@@ -80,6 +83,8 @@
 		<?php } ?>
 	</div>
 </div>
+<div id="mobile-device"></div>
+<div id="tablet-device"></div>
 
 
 <?php get_footer(); ?>
