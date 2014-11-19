@@ -27,15 +27,21 @@
                 $(this).addClass("landscape");
             }
         });
+        $("ul.category-title-list").each(function(){
+            var numList = $(this).children().length;
+            var liHeight = $(this).height();
+            $(this).children("li").css('line-height',liHeight/numList+'px');
+            //alert(numList);
+        });
     });
 </script>
 
-<div id="herospace">
+<div id="herospace" class="clearfix">
 
 </div>
 
 
-<div class="main">
+<div class="main clearfix">
 	<div class="content clearfix">
 		<?php
 		if ( have_posts( $myfilter ) ) {
@@ -44,20 +50,24 @@
                 ?>
                 <div class="category clearfix">
                     <h1 class="category"><? echo $category->name ?></h1>
-                    <div class="featured-image">
-                        <img class="featured-image" src="<?php echo get_featured_image_url($category); ?>">
-                    </div>
-                    <div class="category-titles">
-                        <?php
-                            foreach ( $posts as  $post ) :
-                        ?>
-                        <h3 class="category-titles"><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></h3>
+                    <div class="category-content">
+                        <div class="featured-image">
+                            <img class="featured-image" src="<?php echo get_featured_image_url($category); ?>">
+                        </div>
+                        <div class="category-titles">
+                            <ul class="category-title-list">
+                            <?php
+                                foreach ( $posts as  $post ) :
+                            ?>
+                                <li><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></li>
 
-                        <?php
-                            endforeach;
-                            wp_reset_postdata();
-                            //the_content();
-                        ?>
+                            <?php
+                                endforeach;
+                                wp_reset_postdata();
+                                //the_content();
+                            ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <?php
