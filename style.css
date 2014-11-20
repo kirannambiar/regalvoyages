@@ -9,10 +9,14 @@
 html {
 	font-size:12px;
     font-family: "Fira Sans", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: "Fira Sans", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 #mobile-device {
@@ -35,7 +39,12 @@ body {
 }
 
 div.content {
+    width:75%;
     padding-top:10rem;
+    max-width:2000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 10rem;
 }
 
 img.featured-image {
@@ -52,11 +61,11 @@ img.featured-image {
 }
 
 div.main {
-    width: 75%;
-    max-width:2000px;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
+    background: #EEEEEE;
 }
+
+
 
 div.footer {
     width:75%;
@@ -99,7 +108,7 @@ div.featured-image {
     overflow:hidden;
 }
 
-h1.category {
+h1 {
     font-family: "Fira Sans", sans-serif;
     font-size: 2.5rem;
 }
@@ -134,6 +143,56 @@ div.category-titles {
     width:30%;
     display:table;
 }
+
+div.newsletter {
+    margin-left: auto;
+    margin-right: auto;
+    width:60%;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    max-width: 1024px;
+}
+
+p.subscription-text1 {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+p.subscription-text2 {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 1.5rem;
+}
+
+div.newsletter-input {
+    height: 3rem;
+}
+
+#newsletter-success {
+    display:none;
+}
+
+input.newsletter-email {
+    width: 70%;
+    height: 3rem;
+    border-radius: 3px;
+    padding-left: 1rem;
+    /* Input Background: */
+    border: 1px solid #979797;
+    -moz-box-shadow:    inset 0px 1px 3px 0px rgba(0,0,0,0.50);
+    box-shadow:         inset 0px 1px 3px 0px rgba(0,0,0,0.50);
+}
+
+input.newsletter-submit {
+    width: 20%;
+    height: 3rem;
+    border-radius: 8px;
+    background: #4A90E2;
+    border: 1px solid #979797;
+    color: #ffffff;
+    margin-left: 1rem;
+}
+
 
 /*  Menu bar css styling  */
 .menu-main-nav-container {
@@ -317,6 +376,9 @@ div.category-titles {
         padding-top: 0;
     }
 
+    div.newsletter {
+        width:80%;
+    }
 
     div.featured-image {
         float:none;

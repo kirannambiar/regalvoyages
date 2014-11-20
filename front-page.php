@@ -36,11 +36,28 @@
             }
             //alert(numList);
         });
+        $("#newsletter-input").submit(function(event) {
+            //Do the AJAX post
+            event.preventDefault()
+            var $form = $(this).find('form');
+
+            var posting = $.post($form.attr('action'), $form.serialize(), function(data){
+            });
+
+            posting.done(function (data) {
+                var tmp = $("#newsletter-input").css('display','none');
+                $("#newsletter-success").css('display','inline');
+            })
+            posting.fail(function() {
+                alert('Subscription failed! Please try again')
+            })
+
+            return false;
+        });
     });
 </script>
 
 <div id="herospace" class="clearfix">
-    <img src="">
 </div>
 
 
@@ -82,7 +99,44 @@
 		</p>
 		<?php } ?>
 	</div>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        if (typeof newsletter_check !== "function") {
+            window.newsletter_check = function (f) {
+                var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
+                if (!re.test(f.elements["ne"].value)) {
+                    alert("The email is not correct");
+                    return false;
+                }
+                if (f.elements["ny"] && !f.elements["ny"].checked) {
+                    alert("You must accept the privacy statement");
+                    return false;
+                }
+                return true;
+            }
+        }
+        //]]>
+
+
+
+    </script>
+
 </div>
+
+
+    <div class="newsletter newsletter-subscription clearfix">
+        <p class="subscription-text1">Sign up for our newsletter</p>
+        <p class="subscription-text2">Find out about our special offers and vacation packages</p>
+        <div id="newsletter-input">
+            <form method="post" action="http://localhost:8888/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
+                    <input class="newsletter-email" type="email" name="ne" size="30" required placeholder="Your email address">
+                    <input class="newsletter-submit" type="submit" value="Subscribe"/>
+            </form>
+        </div>
+        <div id="newsletter-success">Thank You for Subscribing!</div>
+    </div>
+
 <div id="mobile-device"></div>
 <div id="tablet-device"></div>
 
