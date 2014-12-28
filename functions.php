@@ -2,6 +2,20 @@
 
 	register_nav_menus();
     add_theme_support( 'post-thumbnails' );
+    add_action( 'init', 'my_custom_post_destination' );
+
+    function my_custom_post_destination() {
+        $labels = array(
+            'name'  => _x( 'Destinations', 'post type general name' ),
+            'singular_name' => _x( 'Destination', 'post type singular name'),
+
+        );
+        $args = array(
+
+        );
+        register_post_type( 'destination', $args );
+    }
+
 
     // returns the first post with the tag 'hero'
     // should contain only one such post
