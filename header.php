@@ -22,6 +22,6 @@
 	</head>
 	<body>
         <div class="top-bar clearfix">
-            <div class="logo"><p>Regal Voyages</p></div>
+            <div class="logo"><a href="/">Regal Voyages</a></div>
             <?php wp_nav_menu( array('menu' => 'Main Nav') ); ?>
         </div>
