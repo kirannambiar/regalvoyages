@@ -32,6 +32,11 @@ body {
     display: none;
 }
 
+#location-map {
+    width:100%;
+    height:20rem;
+}
+
 #herospace {
     width:100%;
     max-width: 2000px;
