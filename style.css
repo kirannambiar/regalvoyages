@@ -6,6 +6,11 @@
  * 
  */
 
+@font-face {
+    font-family: 'BlackChancery';
+    src: url('fonts/BLKCHCRY.TTF');
+}
+
 html {
 	font-size:12px;
     font-family: "Fira Sans", sans-serif;
@@ -86,6 +91,7 @@ div.top-bar {
 
 div.logo {
     height:inherit;
+    font-family: "BlackChancery", sans-serif;
     font-size: 3rem;
     width:40%;
     position: absolute;
