@@ -47,14 +47,22 @@ a:active {
     color:#f2f2f2;
 }
 
+h3 {
+    font-weight: normal;
+}
+
 h4 {
     font-weight: normal;
 }
 
 h1.no-hero {
-    top:9rem;
+    top: 7rem;
     position: relative;
     font-weight: normal;
+    width: 75%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #mobile-device {
@@ -513,10 +521,6 @@ input.newsletter-submit {
 
     #herospace {
         height:30rem;
-    }
-
-    div.content {
-        padding-top: 0;
     }
 
     div.newsletter {
