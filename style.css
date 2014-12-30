@@ -154,8 +154,9 @@ div.footer {
     max-width: 2000px;
     margin-left:auto;
     margin-right:auto;
+    margin-top:10rem;
     padding-top:3rem;
-    height:30rem;
+    height:20rem;
     position: relative;
 }
 
