@@ -2,27 +2,11 @@
 
 	register_nav_menus();
     add_theme_support( 'post-thumbnails' );
-    //add_action( 'init', 'create_destination_post_type' );
     add_action( 'init', 'register_cpt_destination' );
     add_action( 'init', 'add_subtitle_to_destination_post' );
     add_action( 'init', 'add_taxonomy_to_destination_post' );
+    add_filter('show_admin_bar', '__return_false');
 
-/*
-    function create_destination_post_type() {
-        register_post_type( 'destination',
-            array(
-                'labels' => array(
-                    'name' => __( 'Destinations' ),
-                    'singular_name' => __( 'Destination' )
-                ),
-                'taxonomies' => array('category', 'post_tag'),
-                'show_in_menu' => true,
-                'public' => true,
-                'has_archive' => true,
-            )
-        );
-    }
-*/
 
     function register_cpt_destination() {
         $labels = array(
