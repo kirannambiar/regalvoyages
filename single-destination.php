@@ -23,6 +23,7 @@
 
 	</div>
 
+			<div class="contact-us"></div>
 	<div class="main clearfix">
 
 				<div class="content clearfix"><?php the_content(); ?></div>
@@ -35,14 +36,17 @@
 	</div>
 
 	<div class="related-destinations">
-		<h4>Related Destinations</h4>
 		<?php
 			$args = array( 'category_name' => $category_slug, 'post_type' => 'destination', 'post__not_in' => array ( $post_id ) );
 			$related_destinations = new WP_Query( $args );
+			if ( $related_destinations->found_posts > 0 ) { ?>
+			<h4>You might also like:</h4>
+			<?php }
 			while ( $related_destinations->have_posts() ) : $related_destinations->the_post();
 				?><div class="related-destination">
-				<a href="<?php the_permalink(); ?>"> <?php the_title(); ?>
-				<?php the_post_thumbnail( array(150, 150) );?>
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( array(150, 150) );?>
+					<h5 class="related-destination-title"><?php the_title(); ?></h5>
 				</a>
 				</div>
 				<?php

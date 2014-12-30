@@ -107,6 +107,12 @@ div.related-destinations {
 
 div.related-destination {
     display: inline-block;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+h5.related-destination-title {
+    width:100%;
+    text-align: center;
 }
 
 div.content {
@@ -150,6 +156,21 @@ div.footer {
     margin-right:auto;
     padding-top:3rem;
     height:30rem;
+    position: relative;
+}
+
+img.member-logos {
+    height:8rem;
+    width:auto;
+    padding: 0rem 1rem 0rem 1rem;
+    display: inline-block;
+}
+
+p.footer {
+    display: inline-block;
+    position: absolute;
+    top:6rem;
+    right:0;
 }
 
 div.top-bar {
