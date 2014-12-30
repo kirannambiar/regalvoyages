@@ -5,7 +5,7 @@
     add_action( 'init', 'register_cpt_destination' );
     add_action( 'init', 'add_subtitle_to_destination_post' );
     add_action( 'init', 'add_taxonomy_to_destination_post' );
-    add_filter('show_admin_bar', '__return_false');
+    add_filter( 'show_admin_bar', '__return_false' );
 
 
     function register_cpt_destination() {
