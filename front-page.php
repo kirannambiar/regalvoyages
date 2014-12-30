@@ -14,7 +14,6 @@
 <script type="text/javascript">
     $( document).ready(function() {
         var herodiv = document.getElementById('herospace');
-        //var tmp = <?php echo get_hero_image_url(); ?>;
         herodiv.style.backgroundImage="url('<?php echo get_hero_image_url(); ?>')";
 
         $("div.featured-image").each(function(){

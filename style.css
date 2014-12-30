@@ -43,9 +43,9 @@ body {
     min-width: 100%;
     min-height: 45rem;
     background-repeat: no-repeat;
-    background-size:fill;
     background-position: center top;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
+    background-size: cover;
 }
 
 div.content {
