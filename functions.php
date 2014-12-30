@@ -91,7 +91,6 @@
     function get_featured_post( $category ) {
         $args = array( 'tag' => 'featured', 'category_name' => $category->name, 'post_type' => 'destination'  );
         $query = get_posts($args);
-        //echo 'getting featured post ' + var_dump($query);
         return $query[0];
     }
 
@@ -104,6 +103,18 @@
         else {
             return 'image not found';
         }
+    }
+
+    //returns the URL for a featured post in a specific category
+    function get_featured_post_url( $category ) {
+        $post = get_featured_post( $category );
+        if ( $post ) {
+            return get_permalink($post->ID);
+        }
+        else {
+            return 'no featured post found';
+        }
+
     }
 
     // TODO: Remove this function as it's no longer used

@@ -76,7 +76,7 @@
                     <h1 class="category"><? echo $category->name ?></h1>
                     <div class="category-content">
                         <div class="featured-image">
-                            <img class="featured-image" src="<?php echo get_featured_image_url($category); ?>">
+                            <a href="<?php echo get_featured_post_url($category); ?>"><img class="featured-image" src="<?php echo get_featured_image_url($category); ?>"></a>
                         </div>
                         <div class="category-titles">
                             <ul class="category-title-list">
