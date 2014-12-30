@@ -1,15 +1,20 @@
 <?php
 	get_header();
 	//$args = array( 'category_name' => 'romantic,adventure', 'tag' => 'destination', 'exculde' => '1' );
-	$myfilter = 'tag=destination';
-	$query = get_posts( $myfilter );
-    $destCategories = get_categories( array('tag' => 'destination' , 'exclude' => '1') );
-
+	//$myfilter = 'tag=destination';
+	//$query = get_posts( $myfilter );
+    //$destinations = get_categories( array('tag' => 'destination' , 'exclude' => '1') );
+    // exclude => 1 is to exclude uncategorised posts
+    $args = array ( 'post_type' => 'destination', 'post_status' => 'publish', 'exclude' => '1' );
+    $categories = get_categories( $args );
+    $destinations = new WP_Query( $args );
+    //var_dump($destinations);
 ?>
 
 <script type="text/javascript">
     $( document).ready(function() {
         var herodiv = document.getElementById('herospace');
+        //var tmp = <?php echo get_hero_image_url(); ?>;
         herodiv.style.backgroundImage="url('<?php echo get_hero_image_url(); ?>')";
 
         $("div.featured-image").each(function(){
@@ -64,9 +69,9 @@
 <div class="main clearfix">
 	<div class="content clearfix">
 		<?php
-		if ( have_posts( $myfilter ) ) {
-			foreach ( $destCategories as $category ) :
-                $posts = get_posts( array('category_name' => $category->slug) );
+		if ( have_posts() ) {
+			foreach ( $categories as $category ) :
+                $posts = get_posts( array('category_name' => $category->slug, 'post_type' => 'destination') );
                 ?>
                 <div class="category clearfix">
                     <h1 class="category"><? echo $category->name ?></h1>
@@ -78,6 +83,7 @@
                             <ul class="category-title-list">
                             <?php
                                 foreach ( $posts as  $post ) :
+                                    //var_dump($post);
                             ?>
                                 <li><a href="<?php the_permalink(); ?>"> <?php echo the_title(); ?> </a></li>
 
