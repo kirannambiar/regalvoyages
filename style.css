@@ -24,6 +24,34 @@ body {
     padding: 0;
 }
 
+a {
+    color:#000000;
+    text-decoration: none;
+}
+
+a:link {
+    color:#000000;
+    text-decoration: none;
+}
+
+a:visited {
+    color:#000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#f2f2f2;
+}
+
+a:active {
+    color:#f2f2f2;
+}
+
+h1.no-hero {
+    top:9rem;
+    position: relative;
+}
+
 #mobile-device {
     display: none;
 }
@@ -46,6 +74,29 @@ body {
     background-position: center top;
     /*background-attachment: fixed;*/
     background-size: cover;
+    position: relative;
+}
+
+.layer {
+    background-color: rgba(255, 255, 255, 0.3);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+div.post_title {
+    position: absolute;
+    bottom:3rem;
+    width:100%;
+}
+
+h1.post_title {
+    width:75%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:4rem;
 }
 
 div.related-destinations {
@@ -65,6 +116,11 @@ div.content {
     margin-right: auto;
     margin-left: auto;
     padding-bottom: 10rem;
+}
+
+img.size-large {
+    max-width: 100%;
+    height: auto;
 }
 
 img.featured-image {
@@ -267,6 +323,7 @@ input.newsletter-submit {
 }
 .menu-main-nav-container ul ul li {
     float: none;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 .menu-main-nav-container ul ul ul {
     top: 0;
@@ -290,7 +347,7 @@ input.newsletter-submit {
     display: block;
     line-height: 1em;
     text-decoration: none;
-    color:#00000;
+    color:#000000;
 }
 
 .menu-main-nav-container > ul {
@@ -328,7 +385,7 @@ input.newsletter-submit {
     line-height: 48px;
 }
 .menu-main-nav-container ul ul li:first-child > a {
-    border-top: 1px solid #0082e7;
+    /*border-top: 1px solid #000000;*/
 }
 .menu-main-nav-container ul ul li:hover > a {
     background: #ffffff;
@@ -336,7 +393,7 @@ input.newsletter-submit {
 }
 .menu-main-nav-container ul ul li:last-child > a {
     border-radius: 0 0 3px 3px;
-    box-shadow: 0 1px 0 #1b9bff;
+    /*box-shadow: 0 1px 0 #000000;*/
 }
 .menu-main-nav-container ul ul li:last-child:hover > a {
     border-radius: 0 0 0 3px;
