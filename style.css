@@ -47,6 +47,10 @@ a:active {
     color:#f2f2f2;
 }
 
+h4 {
+    font-weight: normal;
+}
+
 h1.no-hero {
     top:9rem;
     position: relative;
@@ -71,11 +75,14 @@ h1.no-hero {
     max-width: 2000px;
     min-width: 100%;
     min-height: 45rem;
+    height:45rem;
+    max-height: 45rem;
     background-repeat: no-repeat;
     background-position: center top;
     /*background-attachment: fixed;*/
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
 
 .layer {
@@ -88,17 +95,22 @@ h1.no-hero {
 }
 
 div.post_title {
-    position: absolute;
-    bottom:3rem;
-    width:100%;
-}
-
-h1.post_title {
-    width:75%;
+    position: relative;
+    width: 75%;
+    height: 100%;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+}
+
+h1.post_title_heading {
     font-size:4rem;
     font-weight: normal;
+}
+
+div.post_title_content {
+    position:absolute;
+    bottom:3rem;
 }
 
 h4.related-destinations {
@@ -107,6 +119,7 @@ h4.related-destinations {
 
 div.related-destinations {
     width: 75%;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 7rem;

@@ -12,21 +12,27 @@
 	});
 </script>
 
-	<div id="herospace" class="clearfix">
-	<div class="layer"></div>
-	<?php
-		if ( have_posts() ) : while ( have_posts() ) : the_post();
-			$category_slug = get_the_category()[0]->slug;
-			$post_id = get_the_ID();
-			?>
-			<div class="post_title"><h1 class="post_title"><?php the_title(); ?></h1></div>
+	<div id="herospace">
+		<div class="layer clearfix"></div>
+		<?php
+			if ( have_posts() ) : while ( have_posts() ) : the_post();
+				$category_slug = get_the_category()[0]->slug;
+				$post_id = get_the_ID();
+				?>
+		<div class="post_title">
+			<div class="post_title_content">
+				<h1 class="post_title_heading"><?php the_title(); ?></h1>
+				<h4 class="post_title_heading"><?php the_subtitle(); ?></h4>
+			</div>
+		</div>
 
 	</div>
 
-			<div class="contact-us"></div>
+	<div class="contact-us"></div>
+
 	<div class="main clearfix">
 
-				<div class="content clearfix"><?php the_content(); ?></div>
+		<div class="content clearfix"><?php the_content(); ?></div>
 		<?php
 			endwhile; else: ?>
 			<p>

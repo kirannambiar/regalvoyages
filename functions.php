@@ -4,6 +4,7 @@
     add_theme_support( 'post-thumbnails' );
     //add_action( 'init', 'create_destination_post_type' );
     add_action( 'init', 'register_cpt_destination' );
+    add_action( 'init', 'add_subtitle_to_destination_post' );
     add_action( 'init', 'add_taxonomy_to_destination_post' );
 
 /*
@@ -63,6 +64,11 @@
         register_taxonomy_for_object_type('category', 'destination');
         register_taxonomy_for_object_type('post_tag', 'destination');
     }
+
+    function add_subtitle_to_destination_post() {
+        add_post_type_support( 'destination', 'wps_subtitle');
+    }
+
 
 
     // returns the first post with the tag 'hero'
