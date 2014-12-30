@@ -131,15 +131,17 @@
 
 
     <div class="newsletter newsletter-subscription clearfix">
-        <p class="subscription-text1">Sign up for our newsletter</p>
-        <p class="subscription-text2">Find out about our special offers and vacation packages</p>
-        <div id="newsletter-input">
-            <form method="post" action="http://localhost:8888/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
-                    <input class="newsletter-email" type="email" name="ne" size="30" required placeholder="Your email address">
-                    <input class="newsletter-submit" type="submit" value="Subscribe"/>
-            </form>
+        <div class="newsletter-content">
+            <p class="subscription-text1">Sign up for our newsletter</p>
+            <p class="subscription-text2">Find out about our special offers and vacation packages</p>
+            <div id="newsletter-input">
+                <form method="post" action="http://localhost:8888/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
+                        <input class="newsletter-email" type="email" name="ne" size="30" required placeholder="Your email address">
+                        <input class="newsletter-submit" type="submit" value="Subscribe"/>
+                </form>
+            </div>
+            <div id="newsletter-success">Thank You for Subscribing!</div>
         </div>
-        <div id="newsletter-success">Thank You for Subscribing!</div>
     </div>
 
 <div id="mobile-device"></div>
