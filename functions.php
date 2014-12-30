@@ -80,6 +80,16 @@
         return $query[0];
     }
 
+    function get_hero_post_url() {
+        $post = get_hero_post();
+        if ( $post ) {
+            return get_permalink($post->ID);
+        }
+        else {
+            return 'no featured post found';
+        }
+    }
+
     function get_hero_image_url() {
         $post = get_hero_post();
         //var_dump($post);

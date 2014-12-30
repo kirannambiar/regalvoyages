@@ -61,9 +61,21 @@
     });
 </script>
 
+<a href="<?php echo get_hero_post_url(); ?>">
 <div id="herospace" class="clearfix">
+    <div class="layer clearfix"></div>
+    <?php
+        $hero_post = get_hero_post();
+        $hero_post_id = $hero_post->ID;
+        ?>
+    <div class="post_title">
+        <div class="post_title_content">
+            <h1 class="post_title_heading"><?php echo get_the_title($hero_post_id); ?></h1>
+            <h4 class="post_title_heading"><?php echo get_the_subtitle($hero_post_id); ?></h4>
+        </div>
+    </div>
 </div>
-
+</a>
 
 <div class="main clearfix">
 	<div class="content clearfix">
