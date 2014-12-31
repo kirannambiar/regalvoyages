@@ -122,7 +122,7 @@
 			<?php _e( 'Sorry, there is not content to show at this time.')?>
 		</p>
 		<?php } ?>
-	</div>
+    </div>
 
     <script type="text/javascript">
         //<![CDATA[
@@ -150,6 +150,14 @@
 
 
     <div class="newsletter newsletter-subscription clearfix">
+
+        <h3>Why should you book with us?</h3>
+        <ul class="usp-list">
+            <li><strong>We Value Unique Experiences:</strong> Enjoy from our handpicked collection of one-of-a-kind accommodations</li>
+            <li><strong>You can live like a local:</strong> Allow us to plan your vacation with activities that allow you to really live like a local</li>
+            <li><strong>Best rate, best value:</strong> These destinations are one of a kind and we only offer the best value for your money</li>
+        </ul>
+
         <div class="newsletter-content">
             <p class="subscription-text1">Sign up for our newsletter</p>
             <p class="subscription-text2">Find out about our special offers and vacation packages</p>

@@ -24,6 +24,16 @@ body {
     padding: 0;
 }
 
+.scrolloff {
+    pointer-events:none;
+}
+
+.usp-list {
+    list-style: none;
+    padding-left: 0;
+    padding-bottom: 7rem;
+}
+
 a {
     color:#000000;
     text-decoration: none;
@@ -530,7 +540,20 @@ input.newsletter-submit {
         padding-bottom: 0.5rem;
     }
 
-    p {
+    h3 {
+        font-size: 2rem;
+    }
+
+    p, li {
+        font-size: 1.5rem;
+    }
+
+    .excerpt {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .usp-list {
         padding-left: 0.5rem;
     }
 
