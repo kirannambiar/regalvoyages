@@ -198,7 +198,7 @@ div.footer {
     margin-right:auto;
     margin-top:10rem;
     padding-top:3rem;
-    height:20rem;
+    height:10rem;
     position: relative;
 }
 
@@ -546,10 +546,6 @@ input.newsletter-submit {
 
     div.footer {
         width:100%;
-        margin-left:auto;
-        margin-right:auto;
-        padding-top:3rem;
-        height:20rem;
     }
 
     div.content {
