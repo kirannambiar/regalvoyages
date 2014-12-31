@@ -79,7 +79,14 @@
 
 <div class="main clearfix">
 	<div class="content clearfix">
-		<?php
+		<div class="excerpt">
+            <p><?php
+                $home = get_page_by_title("home");
+                echo $home->post_content;
+            ?></p>
+        </div>
+        <?php
+
 		if ( have_posts() ) {
 			foreach ( $categories as $category ) :
                 $posts = get_posts( array('category_name' => $category->slug, 'post_type' => 'destination') );
