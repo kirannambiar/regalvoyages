@@ -35,8 +35,14 @@
             var numList = $(this).children().length;
             var liHeight = $(this).height();
             var isMobile = $('#mobile-device').is(':visible') || $('#tablet-device').is(':visible');
+            var fontSize = $(this).css('font-size');
+            fontSize = Math.floor(parseInt(fontSize.replace('px','')))+10;
             if ( !isMobile ) {
-                $(this).children("li").css('line-height', liHeight / numList + 'px');
+                var padding = ( (liHeight / numList) - fontSize ) / 2;
+                //alert("padding = " + padding + " liHeight = " + liHeight + " numList = " + numList + " fontSize = " + fontSize);
+                $(this).children("li").css('padding-top',  padding + 'px');
+                $(this).children("li").css('padding-bottom', padding + 'px');
+
             }
             //alert(numList);
         });
@@ -67,9 +73,7 @@
     $hero_post = get_hero_post();
     $hero_post_id = $hero_post->ID;
     ?>
-    <div class="layer clearfix">
-        <p class="image-caption"><?php echo featured_image_caption($hero_post_id); ?></p>
-    </div>
+    <p class="image-caption"><?php echo featured_image_caption($hero_post_id); ?></p>
     <div class="post_title">
         <div class="post_title_content">
             <h1 class="post_title_heading"><?php echo get_the_title($hero_post_id); ?></h1>
@@ -96,10 +100,11 @@
                 <div class="category clearfix">
                     <h1 class="category"><? echo $category->name ?></h1>
                     <div class="category-content">
-                        <div class="featured-image">
-                            <a href="<?php echo get_featured_post_url($category); ?>"><img class="featured-image" src="<?php echo get_featured_image_url($category); ?>"></a>
-                            <p class="image-caption"><?php echo featured_image_caption(get_featured_post_id( $category )); ?></p>
-                        </div>
+                        <a href="<?php echo get_featured_post_url($category); ?>">
+                            <div class="featured-image" style='background-image: url("<?php echo get_featured_image_url($category); ?>");'>
+                                <p class="image-caption"><?php echo featured_image_caption(get_featured_post_id( $category )); ?></p>
+                            </div>
+                        </a>
                         <div class="category-titles">
                             <ul class="category-title-list">
                             <?php

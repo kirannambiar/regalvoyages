@@ -11,15 +11,10 @@
     src: url('fonts/BLKCHCRY.TTF');
 }
 
-html {
-	font-size:12px;
+html, body {
+	font-size:18px;
     font-family: "Fira Sans", sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: "Fira Sans", sans-serif;
+    font-weight: 200;
     margin: 0;
     padding: 0;
 }
@@ -44,7 +39,7 @@ p.wp-caption-text, p.image-caption {
 .usp-list {
     list-style: none;
     padding-left: 0;
-    padding-bottom: 7rem;
+    padding-bottom: 5rem;
 }
 
 a {
@@ -70,16 +65,13 @@ a:active {
     color:#f2f2f2;
 }
 
-h3 {
-    font-weight: normal;
-}
-
-h4 {
+h1, h2, h3, h4, h5, h6 {
+    margin-top:0;
     font-weight: normal;
 }
 
 h1.no-hero {
-    top: 7rem;
+    top: 5rem;
     position: relative;
     font-weight: normal;
     width: 75%;
@@ -126,8 +118,7 @@ h1.no-hero {
 }
 
 div.excerpt {
-    font-size: 1.5rem;
-    font-weight: normal;
+    font-size: 1.25rem;
     padding-top: 1rem;
 }
 
@@ -140,8 +131,9 @@ div.post_title {
 }
 
 h1.post_title_heading {
-    font-size:4rem;
+    font-size:2rem;
     font-weight: normal;
+    padding-top:2rem;
 }
 
 div.post_title_content {
@@ -158,7 +150,7 @@ div.related-destinations {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 7rem;
+    padding-top: 5rem;
 }
 
 div.related-destination {
@@ -181,11 +173,11 @@ h5.related-destination-title {
 
 div.content {
     width:75%;
-    padding-top:7rem;
+    padding-top:2rem;
     max-width:1000px;
     margin-right: auto;
     margin-left: auto;
-    padding-bottom: 7rem;
+    padding-bottom: 5rem;
 }
 
 img.size-large {
@@ -218,17 +210,19 @@ div.footer {
     max-width: 1000px;
     margin-left:auto;
     margin-right:auto;
-    margin-top:10rem;
+    margin-top:5rem;
     padding-top:3rem;
     height:10rem;
     position: relative;
 }
 
 img.member-logos {
-    height:5rem;
+    height:3rem;
     width:auto;
     padding: 0rem 1rem 0rem 1rem;
     display: inline-block;
+    position: relative;
+    margin-top:1rem;
 }
 
 p.footer {
@@ -236,6 +230,7 @@ p.footer {
     position: absolute;
     top:6rem;
     right:0;
+    font-size:0.7rem;
 }
 
 div.top-bar {
@@ -243,14 +238,13 @@ div.top-bar {
     margin-left: auto;
     margin-right:auto;
     max-width: 1000px;
-    height:10rem;
+    height:7rem;
     position: relative;
-    padding-top:3rem;
+    padding-top:1.8rem;
 }
 
 div.logo {
     height: inherit;
-    width: 40%;
     left: 0px;
     display: inline-block;
     position: relative;
@@ -261,12 +255,15 @@ div.logo {
 
 .logo h1 {
     font-family: "BlackChancery", sans-serif;
-    font-size: 3rem;
+    font-size: 1.8rem;
     margin-top: 0rem;
+    letter-spacing: 0.15rem;
 }
 
 .logo h6 {
-    font-size: 1rem;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 300;
 }
 
 .logo a, a:hover, h1 {
@@ -279,27 +276,30 @@ div.category {
 }
 
 div.category-content {
-    height:25rem;
+    height:18rem;
 }
 
 div.featured-image {
     float:left;
     width:70%;
-    height: inherit;
+    height:100%;
     overflow:hidden;
     position:relative;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
 }
 
 h1 {
     font-family: "Fira Sans", sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: normal;
 }
 
 ul.category-title-list {
     margin: 0 0 0 0;
     vertical-align:middle;
-    font-size: 1.5rem;
+    font-size: 1rem;
     list-style: none;
     display:table-cell;
     padding-left: 0;
@@ -331,20 +331,22 @@ div.newsletter {
     margin-left: auto;
     margin-right: auto;
     width:60%;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     max-width: 1000px;
 }
 
-p.subscription-text1 {
+div.newsletter p {
     font-family: "Fira Sans", sans-serif;
-    font-size: 1rem;
+}
+
+p.subscription-text1 {
+    font-size: 0.8rem;
     margin-bottom: 0;
 }
 
 p.subscription-text2 {
-    font-family: "Fira Sans", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 div.newsletter-input {
@@ -410,7 +412,7 @@ input.newsletter-submit {
 .menu-main-nav-container {
     /*width: 40%;*/
     background: #ffffff;
-    font-size: 1.3rem;
+    font-size: 1rem;
     position: absolute;
     right:0;
 }
@@ -645,7 +647,7 @@ input.newsletter-submit {
     }
 
     h1.no-hero {
-        top: 3rem;
+        margin-top: 5rem;
         position: relative;
         font-weight: normal;
         width: 100%;
