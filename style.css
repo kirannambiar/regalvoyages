@@ -244,15 +244,24 @@ div.top-bar {
 
 div.logo {
     height:inherit;
-    font-family: "BlackChancery", sans-serif;
-    font-size: 3rem;
     width:40%;
     position: absolute;
     left:0;
     top:30%;
+    margin-top: 0.3rem;
 }
 
-.logo a, a:hover {
+.logo h1 {
+    font-family: "BlackChancery", sans-serif;
+    font-size: 3rem;
+    margin-top: 0rem;
+}
+
+.logo h6 {
+    font-size: 1rem;
+}
+
+.logo a, a:hover, h1 {
     color:#000000;
     text-decoration: none;
 }
