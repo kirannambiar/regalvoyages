@@ -13,7 +13,9 @@
 </script>
 
 	<div id="herospace">
-		<div class="layer clearfix"></div>
+		<div class="layer clearfix">
+			<p class="image-caption"><?php echo featured_image_caption($post_id); ?></p>
+		</div>
 		<?php
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 				$category_slug = get_the_category()[0]->slug;
@@ -25,7 +27,6 @@
 				<h4 class="post_title_heading"><?php the_subtitle(); ?></h4>
 			</div>
 		</div>
-
 	</div>
 
 	<div class="contact-us"></div>

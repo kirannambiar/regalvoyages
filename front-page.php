@@ -63,11 +63,13 @@
 
 <a href="<?php echo get_hero_post_url(); ?>">
 <div id="herospace" class="clearfix">
-    <div class="layer clearfix"></div>
     <?php
-        $hero_post = get_hero_post();
-        $hero_post_id = $hero_post->ID;
-        ?>
+    $hero_post = get_hero_post();
+    $hero_post_id = $hero_post->ID;
+    ?>
+    <div class="layer clearfix">
+        <p class="image-caption"><?php echo featured_image_caption($hero_post_id); ?></p>
+    </div>
     <div class="post_title">
         <div class="post_title_content">
             <h1 class="post_title_heading"><?php echo get_the_title($hero_post_id); ?></h1>
@@ -96,6 +98,7 @@
                     <div class="category-content">
                         <div class="featured-image">
                             <a href="<?php echo get_featured_post_url($category); ?>"><img class="featured-image" src="<?php echo get_featured_image_url($category); ?>"></a>
+                            <p class="image-caption"><?php echo featured_image_caption(get_featured_post_id( $category )); ?></p>
                         </div>
                         <div class="category-titles">
                             <ul class="category-title-list">

@@ -24,6 +24,13 @@ body {
     padding: 0;
 }
 
+.image-caption {
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0.25rem;
+    font-size: 0.75rem;
+}
+
 .scrolloff {
     pointer-events:none;
 }
@@ -263,6 +270,7 @@ div.featured-image {
     width:70%;
     height: inherit;
     overflow:hidden;
+    position:relative;
 }
 
 h1 {

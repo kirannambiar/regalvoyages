@@ -117,6 +117,20 @@
 
     }
 
+    function get_featured_post_id( $category ) {
+        $post = get_featured_post( $category );
+        return $post->ID;
+    }
+
+    function featured_image_caption( $post_id ) {
+        $thumbnail_id    = get_post_thumbnail_id($post_id);
+        $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+        if ($thumbnail_image && isset($thumbnail_image[0])) {
+            return $thumbnail_image[0]->post_excerpt;
+        }
+    }
+
     // TODO: Remove this function as it's no longer used
     function get_posts_by_categories($post_categories) {
         $cats = array();
