@@ -21,17 +21,19 @@
 				$category_slug = get_the_category()[0]->slug;
 				$post_id = get_the_ID();
 				?>
+
+	</div>
+
+	<div class="contact-us"></div>
+
+	<div class="main clearfix">
+
 		<div class="post_title">
 			<div class="post_title_content">
 				<h1 class="post_title_heading"><?php the_title(); ?></h1>
 				<h4 class="post_title_heading"><?php the_subtitle(); ?></h4>
 			</div>
 		</div>
-	</div>
-
-	<div class="contact-us"></div>
-
-	<div class="main clearfix">
 
 		<div class="content clearfix"><?php the_content(); ?></div>
 		<?php

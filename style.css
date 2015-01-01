@@ -31,6 +31,19 @@ body {
     font-size: 0.75rem;
 }
 
+.wp-caption {
+    position:relative;
+}
+
+p.wp-caption-text {
+    position: absolute;
+    right: 1rem;
+    bottom: -1.2rem;
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    color:#979797;
+}
+
 .scrolloff {
     pointer-events:none;
 }
@@ -128,7 +141,6 @@ div.excerpt {
 div.post_title {
     position: relative;
     width: 75%;
-    height: 100%;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -140,8 +152,8 @@ h1.post_title_heading {
 }
 
 div.post_title_content {
-    position:absolute;
-    bottom:3rem;
+    position:relative;
+    text-align: center;
 }
 
 h4.related-destinations {
@@ -240,16 +252,19 @@ div.top-bar {
     max-width: 1000px;
     height:10rem;
     position: relative;
+    padding-top:3rem;
 }
 
 div.logo {
-    height:inherit;
-    width:40%;
-    position: absolute;
-    left:0;
-    top:30%;
-    margin-top: 0.3rem;
+    height: inherit;
+    width: 40%;
+    left: 0px;
+    display: inline-block;
+    position: relative;
+    margin-top: 0px;
+    padding-top: 0px;
 }
+
 
 .logo h1 {
     font-family: "BlackChancery", sans-serif;
@@ -391,14 +406,18 @@ input.newsletter-submit {
     background-color:#000000;
 }
 
-.menu-main-nav-container {
-    padding: 0;
-    border: 0;
-    width: 60%;
+.menu-container {
+    position:absolute;
+    width:40%;
     height:inherit;
+    display: inline-block;
+    right:0;
+}
+
+.menu-main-nav-container {
+    /*width: 40%;*/
     background: #ffffff;
     font-size: 1.3rem;
-    display:table;
     position: absolute;
     right:0;
 }

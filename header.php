@@ -37,5 +37,7 @@
 					<h6>Complete Travel Solutions</h6>
 				</a>
 			</div>
-            <?php wp_nav_menu( array('menu' => 'Main Nav') ); ?>
+			<div class="menu-container">
+            	<?php wp_nav_menu( array('menu' => 'Main Nav') ); ?>
+			</div>
         </div>
