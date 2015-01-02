@@ -11,7 +11,7 @@
     //var_dump($destinations);
 ?>
 
-<script type="text/javascript">
+<script type="text/javascript" xmlns="http://www.w3.org/1999/html">
     $( document).ready(function() {
         var herodiv = document.getElementById('herospace');
         herodiv.style.backgroundImage="url('<?php echo get_hero_image_url(); ?>')";
@@ -34,7 +34,7 @@
         $("ul.category-title-list").each(function(){
             var numList = $(this).children().length;
             var liHeight = $(this).height();
-            var isMobile = $('#mobile-device').is(':visible') || $('#tablet-device').is(':visible');
+            var isMobile = $('#mobile-device').is(':visible'); // || $('#tablet-device').is(':visible');
             var fontSize = $(this).css('font-size');
             fontSize = Math.floor(parseInt(fontSize.replace('px','')))+10;
             if ( !isMobile ) {
@@ -73,15 +73,18 @@
     $hero_post = get_hero_post();
     $hero_post_id = $hero_post->ID;
     ?>
-    <p class="image-caption"><?php echo featured_image_caption($hero_post_id); ?></p>
     <div class="post_title">
         <div class="post_title_content">
+            <h4 class="feature-title">FEATURED DESTINATION</h4>
             <h1 class="post_title_heading"><?php echo get_the_title($hero_post_id); ?></h1>
             <h4 class="post_title_heading"><?php echo get_the_subtitle($hero_post_id); ?></h4>
         </div>
     </div>
+    </div>
 </div>
 </a>
+    <p class="hero-image-caption"><?php echo convert_caption_links(featured_image_caption($hero_post_id)); ?></p>
+
 
 <div class="main clearfix">
 	<div class="content clearfix">
@@ -98,12 +101,15 @@
                 $posts = get_posts( array('category_name' => $category->slug, 'post_type' => 'destination') );
                 ?>
                 <div class="category clearfix">
-                    <h1 class="category"><? echo $category->name ?></h1>
+                    <h2 class="category"><? echo $category->name ?></h2>
                     <div class="category-content">
                         <a href="<?php echo get_featured_post_url($category); ?>">
                             <div class="featured-image" style='background-image: url("<?php echo get_featured_image_url($category); ?>");'>
-                                <p class="image-caption"><?php echo featured_image_caption(get_featured_post_id( $category )); ?></p>
+                                <!--<p class="hero-image-caption"><?php //echo featured_image_caption(get_featured_post_id( $category )); ?></p>-->
+                                <p class="hero-image-caption"><?php echo convert_caption_links(featured_image_caption(get_featured_post_id( $category ))); ?></p>
+
                             </div>
+
                         </a>
                         <div class="category-titles">
                             <ul class="category-title-list">
@@ -159,7 +165,7 @@
 
     <div class="newsletter newsletter-subscription clearfix">
 
-        <h3>Why should you book with us?</h3>
+        <h3 class="left-align">Why should you book with us?</h3>
         <ul class="usp-list">
             <li><strong>We Value Unique Experiences:</strong> Enjoy from our handpicked collection of one-of-a-kind accommodations</li>
             <li><strong>You can live like a local:</strong> Allow us to plan your vacation with activities that allow you to really live like a local</li>
@@ -167,10 +173,9 @@
         </ul>
 
         <div class="newsletter-content">
-            <p class="subscription-text1">Sign up for our newsletter</p>
-            <p class="subscription-text2">Find out about our special offers and vacation packages</p>
+            <p class="subscription-text1">Subscribe to our newsletter for special offers and packages</p>
             <div id="newsletter-input">
-                <form method="post" action="http://localhost:8888/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
+                <form method="post" action="<?php echo plugins_url(); ?>/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
                         <input class="newsletter-email" type="email" name="ne" size="30" required placeholder="Your email address">
                         <input class="newsletter-submit" type="submit" value="Subscribe"/>
                 </form>

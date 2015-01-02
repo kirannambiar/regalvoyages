@@ -11,6 +11,17 @@
     src: url('fonts/BLKCHCRY.TTF');
 }
 
+
+.wp-caption img.stretchx{
+    height:auto;
+    width:100%;
+}
+.wp-caption img.stretchy{
+    height:100%;
+    width:auto;
+}
+
+
 html, body {
 	font-size:18px;
     font-family: "Fira Sans", sans-serif;
@@ -19,17 +30,37 @@ html, body {
     padding: 0;
 }
 
-.wp-caption {
-    position:relative;
+strong {
+    font-weight: 400;
 }
 
-p.wp-caption-text, p.image-caption {
-    position: absolute;
-    right: 1rem;
-    bottom: -1.2rem;
-    font-size: 0.75rem;
+.wp-caption {
+    position:relative;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+p.wp-caption-text, p.hero-image-caption {
+    font-size: 0.5rem;
     margin-bottom: 0;
     color:#979797;
+    text-align: right;
+}
+
+p.wp-caption-text a, p.hero-image-caption a {
+    color:#979797;
+}
+
+p.hero-image-caption {
+    background-color: rgba(255, 255, 255,0.01);
+    margin-bottom: -1rem;
+}
+
+p.wp-caption-text {
+    position: relative;
+    margin-bottom: 0;
+    text-align: right;
 }
 
 .scrolloff {
@@ -70,8 +101,15 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
+
+div {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
 h1.no-hero {
-    top: 5rem;
+    margin-top: 5rem;
     position: relative;
     font-weight: normal;
     width: 75%;
@@ -93,19 +131,24 @@ h1.no-hero {
     height:30rem;
 }
 
-#herospace {
+#herospace, #herospace-destination {
     width:100%;
     max-width: 2000px;
     min-width: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+#herospace {
     min-height: 45rem;
     height:45rem;
     max-height: 45rem;
-    background-repeat: no-repeat;
-    background-position: center top;
-    /*background-attachment: fixed;*/
-    background-size: cover;
-    position: relative;
-    overflow: visible;
+}
+
+#herospace-destination {
+    min-height: 35rem;
+    height:35rem;
+    max-height: 35rem;
 }
 
 .layer {
@@ -128,17 +171,39 @@ div.post_title {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1rem;
 }
 
 h1.post_title_heading {
-    font-size:2rem;
     font-weight: normal;
-    padding-top:2rem;
+    padding: 0.5rem 0.25rem 0;
+}
+
+
+h4.feature-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    font-weight: 200;
+    border-bottom: solid thin;
+    margin: 0 6rem;
+    padding-bottom: 0.15rem;
 }
 
 div.post_title_content {
     position:relative;
     text-align: center;
+    width: auto;
+    min-width: 450px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255,255,255,0.8);
+    padding:1rem;
+}
+
+
+div.clear-background {
+    background: none !important;
 }
 
 h4.related-destinations {
@@ -155,12 +220,14 @@ div.related-destinations {
 
 div.related-destination {
     display: inline-block;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+    width: 16rem;
+    height: 10rem;
 }
 
 div.related-destination-img {
-    height:12.5rem;
-    width: auto;
+    width:100%;
+    height:100%;
     display: inline-block;
     overflow: hidden;
 }
@@ -202,8 +269,6 @@ div.main {
     width: 100%;
     background: #EEEEEE;
 }
-
-
 
 div.footer {
     width:75%;
@@ -283,16 +348,14 @@ div.featured-image {
     float:left;
     width:70%;
     height:100%;
-    overflow:hidden;
+    overflow-x:hidden;
+    overflow: visible;
     position:relative;
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
 }
 
 h1 {
     font-family: "Fira Sans", sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: normal;
 }
 
@@ -341,11 +404,6 @@ div.newsletter p {
 }
 
 p.subscription-text1 {
-    font-size: 0.8rem;
-    margin-bottom: 0;
-}
-
-p.subscription-text2 {
     font-size: 1rem;
 }
 
@@ -404,14 +462,18 @@ input.newsletter-submit {
 .menu-container {
     position:absolute;
     width:40%;
+    min-width:370px;
     height:inherit;
     display: inline-block;
     right:0;
 }
 
+#menu-main-nav {
+    width:100%;
+}
+
 .menu-main-nav-container {
-    /*width: 40%;*/
-    background: #ffffff;
+    width: 100%;
     font-size: 1rem;
     position: absolute;
     right:0;
@@ -422,10 +484,12 @@ input.newsletter-submit {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 10rem;
 }
 .menu-main-nav-container ul {
     position: relative;
     z-index: 19;
+    text-align: center;
 }
 .menu-main-nav-container ul li {
     float: left;
@@ -494,8 +558,8 @@ input.newsletter-submit {
 
 .menu-main-nav-container ul ul {
     text-transform: none;
-    min-width: 290px;
-    max-width: 290px;
+    min-width: 100%;
+    max-width: 100%;
 
 }
 .menu-main-nav-container ul ul a {
@@ -547,7 +611,58 @@ input.newsletter-submit {
 
 
 /* css for mobile devices */
-@media (max-width:1000px) {
+@media (max-device-width:1024px) {
+
+    html, body {
+        font-size: 24px;
+    }
+
+    #herospace-destination {
+        min-height: 30rem;
+        max-height: 30rem;
+        height: 30rem;
+    }
+
+    div.content, div.newsletter {
+        width:90%;
+    }
+
+    input.newsletter-email, input.newsletter-submit {
+        max-width: 100%;
+    }
+
+    h4.related-destinations {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    h5.related-destination-title {
+        margin-top:1rem;
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    div.top-bar {
+        width:90%;
+    }
+
+    h1.post_title_heading {
+        font-weight: normal;
+        padding-top:0.5rem;
+    }
+
+    h4.feature-title {
+        font-size: 0.6rem;
+        margin: 0 4rem;
+    }
+
+    div.post_title_content {
+        position:relative;
+        text-align: center;
+        width: 45%;
+        min-width: 450px;
+        padding:1rem;
+    }
 
     #tablet-device {
         display: block;
@@ -556,32 +671,52 @@ input.newsletter-submit {
 
 
 /* css for mobile devices */
-@media (max-width:1000px) {
+@media all and (max-device-width:480px) {
 
-    html {
-        font-size: 1em;
+    html, body {
+        font-size: 24px;
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        padding-left: 0.5rem;
-        padding-bottom: 0.5rem;
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
     }
 
     h3 {
         font-size: 2rem;
     }
 
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    h4.related-destinations {
+        padding-left:0rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
     p, li {
         font-size: 1.8rem;
     }
 
-    .excerpt {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+    .one_half {
+        width:100% !important;
+        float:none !important;
+    }
+
+    .one_half h3 {
+        text-align: left;
     }
 
     .usp-list {
@@ -608,12 +743,25 @@ input.newsletter-submit {
         max-width: 100%;
     }
 
+    div.content p {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        margin-bottom: 1.8rem;
+    }
+
+    div.content ul {
+        margin-left: 2.2rem;
+        padding-right: 1.5rem;
+        margin-bottom: 1.8rem;
+    }
+
     div.excerpt {
-        padding-top: 3rem;
+        padding: 3rem 0 0 0;
+        width:95%;
+        margin: 0 auto 0 auto;
     }
 
     div.logo {
-        width: 100%;
         padding-left:1rem;
     }
 
@@ -622,32 +770,45 @@ input.newsletter-submit {
     }
 
     div.related-destinations-content {
-        width: 100%;
+        width: 85%;
         margin-left: auto;
         margin-right: auto;
     }
 
     div.related-destination {
         width: 100%;
+        height: 22rem;
     }
 
     div.related-destination-img {
         width: 100%;
-        height: 11rem;
         margin-left: auto;
         margin-right: auto;
     }
 
+
+/*    div.related-destination-img {
+        width:100%;
+        height:100%;
+        display: inline-block;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+*/
     div.related-destination-img img {
         width: 18rem;
     }
 
     h5.related-destination-title {
-        text-align: left;
+        margin-top:1rem;
+        font-size: 1.7rem;
     }
 
     h1.no-hero {
         margin-top: 5rem;
+        margin-bottom: 5rem;
         position: relative;
         font-weight: normal;
         width: 100%;
@@ -658,7 +819,17 @@ input.newsletter-submit {
     }
 
     #responsive-menu li {
-        font-size: 1.5rem !important;
+        font-size: 2rem !important;
+        height: 6rem !important;
+        line-height: 6rem !important;
+        vertical-align: middle;
+    }
+
+    #responsive-menu .responsive-menu li a {
+        font-size: 2rem !important;
+        height: 6rem !important;
+        line-height: 6rem !important;
+        vertical-align: middle;
     }
 
     .menu-main-nav-container {
@@ -671,12 +842,8 @@ input.newsletter-submit {
         margin-left: 5px;
     }
 
-    #herospace {
+    #herospace, #herospace-destination {
         height:30rem;
-    }
-
-    div.newsletter {
-        width:80%;
     }
 
     div.featured-image {
@@ -709,6 +876,7 @@ input.newsletter-submit {
     .category-title-list li {
         width:100%;
         line-height: 6rem;
+        font-size: 2.5rem;
     }
 
     .category-title-list li:first-child {
@@ -725,9 +893,47 @@ input.newsletter-submit {
         display:table;
     }
 
+    .left-align {
+        text-align: left;
+    }
+
+    div.newsletter {
+        width:95%;
+    }
+
+    div.newsletter-content {
+        text-align: center;
+    }
+
+    p.subscription-text1 {
+        font-size: 1.8rem;
+    }
+
+    div.newsletter-input {
+        width:90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    input.newsletter-email, input.newsletter-submit {
+        width: 100%;
+        max-width: 100%;
+        margin:0 0 0 0;
+        font-size: 1.8rem;
+        height:5rem;
+    }
+
+    #newsletter-success {
+        font-size: 1.8rem;
+    }
+
+    input.newsletter-submit {
+        margin-top:1rem;
+        width:50%;
+    }
+
     #mobile-device {
         display: block;
     }
-
 
 }

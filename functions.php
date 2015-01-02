@@ -89,8 +89,11 @@
     // returns the first post with the tag 'featured'
     // should contain only one such post
     function get_featured_post( $category ) {
-        $args = array( 'tag' => 'featured', 'category_name' => $category->name, 'post_type' => 'destination'  );
+        $category_id = get_cat_ID($category->name);
+        //var_dump($category_id);
+        $args = array( 'tag' => 'featured', 'category' => $category_id, 'post_type' => 'destination'  );
         $query = get_posts($args);
+        //var_dump($query);
         return $query[0];
     }
 
@@ -142,6 +145,24 @@
         echo 'inside get posts !!!!!!!!!! ';
         echo var_dump($cats);
         return get_posts($cats);
+    }
+
+    function convert_caption_links($string) {
+        // {link="http://www.flickr.com/photos/26598370@N00/219132302/"}Jenny{/link} / CC BY 2.0 https://creativecommons.org/licenses/by-nd/2.0/
+        $patterns[0] = '/({link=\")/';
+        $patterns[1] = '/\"\s*(})/';
+        $patterns[2] = '/{\/link}/';
+        $replacements[0] = '<a href="';
+        $replacements[1] = '" target="_blank">';
+        $replacements[2] = '</a>';
+
+        //preg_match($pattern1,$string,$match);
+        $result = preg_replace($patterns,$replacements,$string);
+        //$url = '<a href="' . $match[1] . '" >' . $match[2] . '</a>';
+        //var_dump($result);
+        //echo ($string);
+        return $result;
+
     }
 
 ?>

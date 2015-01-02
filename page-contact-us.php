@@ -31,7 +31,7 @@
         </section>
 
         <div class="content">
-            <h3>We also provide Services such as:</h3>
+            <h3 class="left-align">We also provide Services such as:</h3>
             <ul>
                 <li>Tickets for Domestic and International Travel</li>
                 <li>Travel Insurance</li>

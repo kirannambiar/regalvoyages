@@ -1,33 +1,45 @@
 <?php get_header(); ?>
 
 <script type="text/javascript">
-	$( document).ready(function() {
-
-		var herodiv = document.getElementById('herospace');
+	$(document).ready(function() {
+		var herodiv = document.getElementById('herospace-destination');
 		herodiv.style.backgroundImage = "url('<?php
         $dom = simplexml_load_string(get_the_post_thumbnail());
         $imgSrc = $dom->attributes()->src;
         echo $imgSrc;
         ?>')"
 	});
+
+
+	$(window).load(function(){
+	   $('.wp-caption').find('img').each(function(){
+	   	  var filldiv = $('.wp-caption');
+		  var fillmeval = filldiv.width()/filldiv.height();
+		  var imgval = $(this).width()/$(this).height();
+		  var imgClass;
+		  if(imgval > fillmeval){
+			  imgClass = "stretchy";
+		  }else{
+			  imgClass = "stretchx";
+		  }
+		  filldiv.children('img').addClass(imgClass);
+	   });
+	});
 </script>
 
-	<div id="herospace">
-			<p class="image-caption"><?php echo featured_image_caption($post_id); ?></p>
+	<div id="herospace-destination">
+			<p class="hero-image-caption"><?php echo convert_caption_links(featured_image_caption($post_id)); ?></p>
 		<?php
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 				$category_slug = get_the_category()[0]->slug;
 				$post_id = get_the_ID();
 				?>
-
 	</div>
-
-	<div class="contact-us"></div>
 
 	<div class="main clearfix">
 
 		<div class="post_title">
-			<div class="post_title_content">
+			<div class="post_title_content clear-background">
 				<h1 class="post_title_heading"><?php the_title(); ?></h1>
 				<h4 class="post_title_heading"><?php the_subtitle(); ?></h4>
 			</div>
@@ -50,15 +62,20 @@
 				if ( $related_destinations->found_posts > 0 ) { ?>
 				<h4 class="related-destinations">You might also like:</h4>
 				<?php }
-				while ( $related_destinations->have_posts() ) : $related_destinations->the_post();
-					?><div class="related-destination">
+				while ( $related_destinations->have_posts() ) {
+					$related_destinations->the_post();
+					$related_destination_id = get_the_ID();
+					?>
+					<div class="related-destination">
 					<a href="<?php the_permalink(); ?>">
-						<div class="related-destination-img"><?php the_post_thumbnail( array(270, 170) );?></div>
+						<div class="related-destination-img" style='background-image: url(" <?php
+							$image_src = wp_get_attachment_image_src(get_post_thumbnail_id($related_destination_id), array(480,480));
+							echo $image_src[0]; ?>")'"></div>
 						<h5 class="related-destination-title"><?php the_title(); ?></h5>
 					</a>
 					</div>
-					<?php
-				endwhile;
+				<?php
+				}
 				//var_dump($related_destinations);
 			?>
 		</div>
