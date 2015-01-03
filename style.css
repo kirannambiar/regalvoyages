@@ -41,15 +41,20 @@ strong {
     overflow-y: visible;
 }
 
-p.wp-caption-text, p.hero-image-caption {
+p.wp-caption-text, p.hero-image-caption, p.featured-image-caption {
     font-size: 0.5rem;
     margin-bottom: 0;
     color:#979797;
     text-align: right;
 }
 
-p.wp-caption-text a, p.hero-image-caption a {
+p.wp-caption-text a, p.hero-image-caption a, p.featured-image-caption a {
     color:#979797;
+}
+
+p.featured-image-caption {
+    position: absolute;
+    left:0;
 }
 
 p.hero-image-caption {
@@ -342,6 +347,7 @@ div.category {
 
 div.category-content {
     height:18rem;
+    position: relative;
 }
 
 div.featured-image {

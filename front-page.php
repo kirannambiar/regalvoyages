@@ -106,11 +106,10 @@
                         <a href="<?php echo get_featured_post_url($category); ?>">
                             <div class="featured-image" style='background-image: url("<?php echo get_featured_image_url($category); ?>");'>
                                 <!--<p class="hero-image-caption"><?php //echo featured_image_caption(get_featured_post_id( $category )); ?></p>-->
-                                <p class="hero-image-caption"><?php echo convert_caption_links(featured_image_caption(get_featured_post_id( $category ))); ?></p>
-
                             </div>
-
                         </a>
+                        <p class="featured-image-caption"><?php echo convert_caption_links(featured_image_caption(get_featured_post_id( $category ))); ?></p>
+
                         <div class="category-titles">
                             <ul class="category-title-list">
                             <?php

@@ -3,6 +3,8 @@
 		<title> <?php bloginfo('name'); ?> </title>
 		
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+		<link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
