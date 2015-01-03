@@ -21,7 +21,6 @@
     width:auto;
 }
 
-
 html, body {
 	font-size:18px;
     font-family: "Fira Sans", sans-serif;
@@ -32,6 +31,19 @@ html, body {
 
 strong {
     font-weight: 400;
+}
+
+#destinations-contact-us {
+    background: #4A90E2;
+    width:260px;
+    margin: -3rem auto 3rem auto;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    color:#fff;
+}
+
+#destinations-contact-us h4 {
+    color: #fff;
 }
 
 .wp-caption {
@@ -243,13 +255,21 @@ h5.related-destination-title {
     font-weight: normal;
 }
 
-div.content {
+div.content, div.contact-page {
     width:75%;
-    padding-top:2rem;
     max-width:1000px;
     margin-right: auto;
     margin-left: auto;
+}
+
+div.content {
+    padding-top:2rem;
     padding-bottom: 5rem;
+}
+
+div.contact-page {
+    padding-top:3rem;
+    padding-bottom: 3rem;
 }
 
 img.size-large {
@@ -520,7 +540,7 @@ input.newsletter-submit {
 }
 .menu-main-nav-container ul ul li {
     float: none;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 .menu-main-nav-container ul ul ul {
     top: 0;
@@ -792,17 +812,6 @@ input.newsletter-submit {
         margin-right: auto;
     }
 
-
-/*    div.related-destination-img {
-        width:100%;
-        height:100%;
-        display: inline-block;
-        overflow: hidden;
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: cover;
-    }
-*/
     div.related-destination-img img {
         width: 18rem;
     }
@@ -936,6 +945,14 @@ input.newsletter-submit {
     input.newsletter-submit {
         margin-top:1rem;
         width:50%;
+    }
+
+    #destinations-contact-us {
+        width:50%;
+    }
+
+    #destinations-contact-us h5 {
+        font-size:1.2rem;
     }
 
     #mobile-device {

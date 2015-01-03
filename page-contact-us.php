@@ -19,8 +19,7 @@
 
     <div class="main clearfix">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <h1 class="post_title no-hero"><?php the_title(); ?></h1>
-            <div class="content clearfix"><?php the_content(); ?></div>
+            <div class="content contact-page clearfix"><?php the_content(); ?></div>
         <?php endwhile; else: ?>
             <p>
                 <?php _e( 'Sorry, there is not content to show at this time.') ?>

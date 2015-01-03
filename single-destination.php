@@ -52,6 +52,12 @@
 				<?php _e( 'Sorry, there is not content to show at this time.') ?>
 			</p>
 		<?php endif; ?>
+		<a href="/contact-us">
+			<div id="destinations-contact-us">
+				<h4>Contact Us</h4>
+				<h5>for the best package & pricing</h5>
+			</div>
+		</a>
 	</div>
 
 	<div class="related-destinations">
