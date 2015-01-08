@@ -26,7 +26,7 @@
             </p>
         <?php endif; ?>
         <section id="map-canvas">
-            <iframe id="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.4413771743702!2d77.57830359877654!3d13.007540865676921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae163392f9127d%3A0xef1c15df201b46ed!2s598%2F18%2F2%2C+11th+Cross+Rd%2C+Sadashiva+Nagar%2C+Armane+Nagar%2C+Bengaluru%2C+Karnataka+560080!5e0!3m2!1sen!2sin!4v1419950681190" frameborder="0" style="border:0"></iframe>
+            <iframe id="location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3887.441813926638!2d77.57831!3d13.007513!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae163392edf837%3A0x575ecda6db9b2b5d!2sRegal+Voyages!5e0!3m2!1sen!2sus!4v1420689213923" frameborder="0" style="border:0"></iframe>
         </section>
 
         <div class="content">
