@@ -33,13 +33,15 @@
 	</head>
 	<body>
         <div class="top-bar clearfix">
-            <div class="logo">
-				<a href="/">
-					<h1>Regal Voyages</h1>
-					<h6>Complete Travel Solutions</h6>
-				</a>
-			</div>
-			<div class="menu-container">
-            	<?php wp_nav_menu( array('menu' => 'Main Nav') ); ?>
+			<div class="top-bar-content">
+				<div class="logo">
+					<a href="/">
+						<h1>Regal Voyages</h1>
+						<h6>Complete Travel Solutions</h6>
+					</a>
+				</div>
+				<div class="menu-container">
+					<?php wp_nav_menu( array('menu' => 'Main Nav') ); ?>
+				</div>
 			</div>
         </div>
