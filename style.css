@@ -638,6 +638,10 @@ input.newsletter-submit {
     right: 99.5%;
 }
 
+li.menu-item.current-menu-item > .shiftnav-target {
+    background: #2B60DE !important;
+}
+
 
 /* css for mobile devices */
 @media (max-device-width:1024px) {
@@ -791,7 +795,9 @@ input.newsletter-submit {
     }
 
     div.logo {
-        padding-left:1rem;
+        margin-left: auto;
+        margin-right: auto;
+        width:100%;
     }
 
     div.related-destinations {
