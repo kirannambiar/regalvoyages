@@ -36,8 +36,7 @@
 			<div class="top-bar-content">
 				<div class="logo">
 					<a href="/">
-						<h1>Regal Voyages</h1>
-						<h6>Complete Travel Solutions</h6>
+						<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/FullLogo.jpg"/>
 					</a>
 				</div>
 				<div class="menu-container">

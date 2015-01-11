@@ -26,8 +26,7 @@
 	   });
 	});
 </script>
-
-	<div id="herospace-destination">
+	<div id="herospace-destination" class="clearfix">
 			<p class="hero-image-caption"><?php echo convert_caption_links(featured_image_caption($post_id)); ?></p>
 		<?php
 			if ( have_posts() ) : while ( have_posts() ) : the_post();

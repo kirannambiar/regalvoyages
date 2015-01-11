@@ -1,14 +1,8 @@
 <?php
 	get_header();
-	//$args = array( 'category_name' => 'romantic,adventure', 'tag' => 'destination', 'exculde' => '1' );
-	//$myfilter = 'tag=destination';
-	//$query = get_posts( $myfilter );
-    //$destinations = get_categories( array('tag' => 'destination' , 'exclude' => '1') );
-    // exclude => 1 is to exclude uncategorised posts
     $args = array ( 'post_type' => 'destination', 'post_status' => 'publish', 'exclude' => '1' );
     $categories = get_categories( $args );
     $destinations = new WP_Query( $args );
-    //var_dump($destinations);
 ?>
 
 <script type="text/javascript" xmlns="http://www.w3.org/1999/html">
@@ -67,6 +61,8 @@
     });
 </script>
 
+<meta name="description" content="Everything you need for the best travel experience. We go the extra mile to find the perfect destination with the best rates for accommodation and air travel">
+
 <a href="<?php echo get_hero_post_url(); ?>">
 <div id="herospace" class="clearfix">
     <?php
@@ -105,7 +101,6 @@
                     <div class="category-content">
                         <a href="<?php echo get_featured_post_url($category); ?>">
                             <div class="featured-image" style='background-image: url("<?php echo get_featured_image_url($category); ?>");'>
-                                <!--<p class="hero-image-caption"><?php //echo featured_image_caption(get_featured_post_id( $category )); ?></p>-->
                             </div>
                         </a>
                         <p class="featured-image-caption"><?php echo convert_caption_links(featured_image_caption(get_featured_post_id( $category ))); ?></p>
@@ -121,7 +116,6 @@
                             <?php
                                 endforeach;
                                 wp_reset_postdata();
-                                //the_content();
                             ?>
                             </ul>
                         </div>
@@ -154,8 +148,6 @@
             }
         }
         //]]>
-
-
 
     </script>
 

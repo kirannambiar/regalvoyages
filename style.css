@@ -253,6 +253,7 @@ h5.related-destination-title {
     width:100%;
     text-align: center;
     font-weight: normal;
+    margin: 1rem 0;
 }
 
 div.content, div.contact-page {
@@ -798,6 +799,7 @@ li.menu-item.current-menu-item > .shiftnav-target {
         margin-left: auto;
         margin-right: auto;
         width:100%;
+        text-align: center;
     }
 
     div.related-destinations {
