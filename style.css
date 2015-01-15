@@ -12,15 +12,6 @@
 }
 
 
-.wp-caption img.stretchx{
-    height:auto;
-    width:100%;
-}
-.wp-caption img.stretchy{
-    height:100%;
-    width:auto;
-}
-
 html, body {
 	font-size:18px;
     font-family: "Fira Sans", sans-serif;
@@ -51,6 +42,18 @@ strong {
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: visible;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.wp-caption img.stretchx{
+    height:auto;
+    width:100%;
+}
+.wp-caption img.stretchy{
+    height:100%;
+    width:auto;
 }
 
 p.wp-caption-text, p.hero-image-caption, p.featured-image-caption {
@@ -64,6 +67,12 @@ p.wp-caption-text a, p.hero-image-caption a, p.featured-image-caption a {
     color:#979797;
 }
 
+p.wp-caption-text {
+    position: relative;
+    margin-bottom: 0;
+    text-align: right;
+}
+
 p.featured-image-caption {
     position: absolute;
     left:0;
@@ -74,11 +83,6 @@ p.hero-image-caption {
     margin-bottom: -1rem;
 }
 
-p.wp-caption-text {
-    position: relative;
-    margin-bottom: 0;
-    text-align: right;
-}
 
 .scrolloff {
     pointer-events:none;
@@ -287,8 +291,8 @@ img.featured-image {
     height:auto;
 }
 .landscape img {
-    width: 100%;
-    height:auto;
+    height: 100%;
+    width:auto;
 }
 
 div.main {

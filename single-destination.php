@@ -14,10 +14,9 @@
 	$(window).load(function(){
 	   $('.wp-caption').find('img').each(function(){
 	   	  var filldiv = $('.wp-caption');
-		  var fillmeval = filldiv.width()/filldiv.height();
 		  var imgval = $(this).width()/$(this).height();
 		  var imgClass;
-		  if(imgval > fillmeval){
+		  if(imgval > 1){
 			  imgClass = "stretchy";
 		  }else{
 			  imgClass = "stretchx";
