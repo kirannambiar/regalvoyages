@@ -153,6 +153,10 @@
 
 </div>
 
+<div class="testimonials">
+    <?php if( function_exists( "get_testimonial_slider_recent" ) ){ get_testimonial_slider_recent( $set="1") ;}?>
+</div>
+
 
     <div class="newsletter newsletter-subscription clearfix">
 
