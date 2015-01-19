@@ -97,7 +97,7 @@
                 $posts = get_posts( array('category_name' => $category->slug, 'post_type' => 'destination') );
                 ?>
                 <div class="category clearfix">
-                    <h2 class="category"><? echo $category->name ?></h2>
+                    <h2 class="category"><?php echo $category->name ?></h2>
                     <div class="category-content">
                         <a href="<?php echo get_featured_post_url($category); ?>">
                             <div class="featured-image" style='background-image: url("<?php echo get_featured_image_url($category); ?>");'>
