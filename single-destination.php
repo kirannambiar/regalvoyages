@@ -17,9 +17,9 @@
 		  var imgval = $(this).width()/$(this).height();
 		  var imgClass;
 		  if(imgval > 1){
-			  imgClass = "stretchy";
-		  }else{
 			  imgClass = "stretchx";
+		  }else{
+			  imgClass = "stretchy";
 		  }
 		  filldiv.children('img').addClass(imgClass);
 	   });

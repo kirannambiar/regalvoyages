@@ -2,7 +2,17 @@
 	<head>
 		<title> <?php bloginfo('name'); ?> </title>
 		
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!--[if !IE]><!-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<!--<![endif]-->
+
+		<!--[if lte IE 9]>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<![endif]-->
+
+		<!--[if gt IE 9]>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<![endif]-->
 
 		<link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 		
@@ -32,6 +42,17 @@
 		
 	</head>
 	<body>
+
+	<!--[if lte IE 9]>
+	<div class="nosupport">
+		<p>Your browser is not supported. Please try using a newer version. Thank you.</p>
+		<p> To contact us <br/>
+		Call: +91 80 4128 9975 </br>
+		or </br>
+		Email </br>
+		info@regalvoyages.com
+	</div>
+	<![endif]-->
         <div class="top-bar clearfix">
 			<div class="top-bar-content">
 				<div class="logo">

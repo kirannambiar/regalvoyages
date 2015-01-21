@@ -24,6 +24,12 @@ strong {
     font-weight: 400;
 }
 
+.nosupport {
+    width:100%;
+    height:100%;
+    background-color: #FFF;
+}
+
 #destinations-contact-us {
     background: #2B60DE;
     width:260px;
