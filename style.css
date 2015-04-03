@@ -691,7 +691,7 @@ li.menu-item.current-menu-item > .shiftnav-target {
 }
 
 
-/* css for mobile devices */
+/* css for tablet devices */
 @media (max-device-width:1024px) {
 
     html, body {
